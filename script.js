@@ -34,4 +34,21 @@ document.addEventListener('DOMContentLoaded', function() {
         li.appendChild(removeButton);
         taskList.appendChild(li);
 
-        // Clear the
+        // Clear the input field
+        taskInput.value = '';
+    }
+
+    // Event listener for button click
+    addButton.addEventListener('click', addTask);
+
+    // Event listener for pressing "Enter" key
+    taskInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            addTask();
+        }
+    });
+
+    // Optionally call addTask on DOM load (example placeholder)
+    // You can initialize predefined tasks here if desired
+    // addTask();
+});
